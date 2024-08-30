@@ -5,7 +5,7 @@ select
     p.product_id,
     p.product_name,
     o.quantity,
-    o.order_date
+    {{ get_date_parts('Order_Date') }} as date_extract
 from
     mrh_dataset.orders as o
 inner join
